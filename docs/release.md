@@ -12,7 +12,7 @@ Future releases still require an explicit reviewed version and approval.
   with copyright (c) 2026 KHALED AL HARAZI. It does not license the separately
   hosted SaaS platform/backend or grant free service access.
 - Package/import/support identity and MIT terms are prepared in release-config.json.
-  version_approved records the owner's publication authorization for 1.1.4.
+  version_approved records the owner's publication authorization for 1.1.5.
   It does not bypass required CI or protected environment review. Reset the
   approval when preparing a different version until that release is authorized.
 - The approved_license_sha256 records the actual MIT LICENSE bytes. If those
@@ -117,8 +117,8 @@ package registry lookup is explicitly skipped. Optional Qt/native-keyring
 acceptance is separate and is not certified by either advisory lookup.
 
 An owner gate check (with your real repository, after legal/identity decisions):
-`python tools/release_gate.py --tag v1.1.4 --repository kdpika/kdpika-licensing`.
-It validates the approved 1.1.4 configuration. Tests use synthetic config to
+`python tools/release_gate.py --tag v1.1.5 --repository kdpika/kdpika-licensing`.
+It validates the approved 1.1.5 configuration. Tests use synthetic config to
 verify both pass/fail routing; they do not approve future releases.
 
 ## 5. Owner-only TestPyPI dry run
@@ -126,7 +126,7 @@ verify both pass/fail routing; they do not approve future releases.
 The following commands create/push a tag and trigger publishing. **Do not run
 until explicit owner authorization. They were NOT run during preparation.**
 For a separately authorized pre-release rehearsal, use a clean reviewed commit
-whose source version is exactly 1.1.0rc1 (not the stable 1.1.4 checkout):
+whose source version is exactly 1.1.0rc1 (not the stable 1.1.5 checkout):
 
 ~~~bash
 git tag -a v1.1.0rc1 -m "KDPika Python SDK 1.1.0rc1"
@@ -169,8 +169,8 @@ immutable index file or reuse a published version.
 Only then, with explicit publication approval:
 
 ~~~bash
-git tag -a v1.1.4 -m "KDPika Python SDK 1.1.4"
-git push origin v1.1.4
+git tag -a v1.1.5 -m "KDPika Python SDK 1.1.5"
+git push origin v1.1.5
 ~~~
 
 Stable tags route only to protected pypi. Review the exact artifacts and approve

@@ -1,6 +1,12 @@
 # Changelog
 
-## 1.1.4 — 2026-10-20
+## 1.1.5 — 2026-10-20
+
+Move macOS CI to the supported Intel runner pool and build the same cryptography
+dependency with Rust/OpenSSL 3 after repeated arm64 runner-acquisition failures.
+All native test combinations, audits and protected publication gates remain.
+
+## 1.1.4 — unpublished release preparation, 2026-10-20
 
 Audit the exact installed third-party dependency inventory without querying the
 unpublished SDK itself. Audit scope is recorded; all audit failures still block

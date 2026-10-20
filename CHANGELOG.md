@@ -4,7 +4,16 @@ Notable changes follow Keep a Changelog categories. API v1 and SDK package
 versions are independent. Registry availability is recorded on PyPI; a source
 changelog entry is not proof of publication.
 
-## [1.1.4] — 2026-10-20
+## [1.1.5] — 2026-10-20
+
+### Changed
+
+- Use GitHub's supported Intel macOS runner pool after arm64 jobs repeatedly
+  failed to acquire runners. Build the same cryptography dependency with Rust
+  and OpenSSL 3; retain all Python 3.11–3.14 tests, audits and publication gates.
+  No SDK runtime logic or dependency-version changes.
+
+## [1.1.4] — unpublished release preparation, 2026-10-20
 
 ### Fixed
 
