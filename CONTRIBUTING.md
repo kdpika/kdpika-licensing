@@ -1,8 +1,8 @@
 # Contributing
 
-The SDK repository is https://github.com/kdpika/kdpika-licensing (private).
-Contributors need access from the owner. Contact hi@kdpika.com if needed;
-report security issues privately using SECURITY.md.
+The public SDK repository is https://github.com/kdpika/kdpika-licensing.
+It does not contain the separately hosted platform/backend. Contact
+hi@kdpika.com if needed; report security issues privately using SECURITY.md.
 
 From the SDK root in a private active virtualenv:
 ~~~bash
@@ -27,5 +27,5 @@ changes. Do not update hosted downloads or publish/tag/push without owner approv
 
 Local pre-commit hooks require Ruff on PATH; running pre-commit install is an
 optional developer action, not performed automatically. Follow CODE_OF_CONDUCT.md.
-No contribution license/CLA is invented; owner-approved repository/license terms
-must be settled before accepting public contributions.
+Contributions must be compatible with the project's MIT License. Only submit
+code and documentation you have permission to share; no separate CLA is imposed.

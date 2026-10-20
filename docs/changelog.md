@@ -12,8 +12,12 @@
 - Source-verified SDK guides, generated reference and tested Sandbox examples.
 - Candidate quality/CI/OIDC release preparation with explicit owner gates.
 
+### Changed
+- The owner selected MIT for the Python SDK and its included documentation.
+  Separate platform/backend/service access is not included in that grant.
+
 ### Pending
-Actual publication, owner-approved usage/redistribution terms, repository identity
-and remote OS/GUI/vault acceptance. No registry release is implied.
+Actual publication, final release approval and remote OS/GUI/vault acceptance.
+Repository identity and SDK MIT licensing are prepared; no registry release is implied.
 
 The included project CHANGELOG.md retains detailed local 1.0.0 observations.

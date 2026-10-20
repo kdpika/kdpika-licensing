@@ -1,11 +1,17 @@
-# License and owner decision
+# MIT License
 
-The included LICENSE is the unchanged proprietary source-package information
-notice. It does not grant new open-source or public redistribution rights.
-Usage/redistribution is subject to the applicable agreement with KDPika;
-contact hi@kdpika.com.
+The Python SDK and its included documentation are distributed under the MIT
+License. Copyright (c) 2026 KHALED AL HARAZI. The complete grant, conditions
+and warranty disclaimer are in the root LICENSE file.
 
-**TODO(owner decision): approve explicit SDK usage/redistribution terms before
-publication.** The release gate stays closed until that decision, repository,
-version/name and support identity are confirmed. No SPDX open-source identifier
-or license badge has been invented.
+You may integrate, modify and redistribute the SDK in commercial applications
+under the license. Keep its copyright and permission notice with redistributed
+copies or substantial portions. The software is provided without warranty.
+
+This repository does not contain or license the separately hosted KDPika SaaS
+platform/backend, customer data or service subscriptions. MIT licensing of the
+SDK does not provide free service access or a KDPika trademark license.
+
+The SDK can be publicly downloadable without making the platform server source
+public. Publishing the package still requires a separately authorized release;
+license approval alone does not create a tag or upload anything to PyPI.

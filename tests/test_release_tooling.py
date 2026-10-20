@@ -100,6 +100,18 @@ def test_information_only_notice_cannot_be_approved(gate):
         module.validate(config, "v1.1.0rc1", config["repository"], root)
 
 
+def test_approved_sdk_license_matches_metadata_and_hash():
+    import tomllib
+
+    config = json.loads((ROOT / "release-config.json").read_text(encoding="utf-8"))
+    license_bytes = (ROOT / "LICENSE").read_bytes()
+    metadata = tomllib.loads((ROOT / "pyproject.toml").read_text(encoding="utf-8"))
+    assert license_bytes.startswith(b"MIT License\n")
+    assert metadata["project"]["license"] == "MIT"
+    assert config["license_approved"] is True
+    assert config["approved_license_sha256"] == hashlib.sha256(license_bytes).hexdigest()
+
+
 def test_workflow_action_pins_and_publish_isolation():
     import re
 

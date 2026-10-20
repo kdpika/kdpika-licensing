@@ -5,9 +5,9 @@ desktop apps, services and command-line tools using the existing KDPika API v1.
 
 **Release candidate 1.1.0rc1 — not yet published.** This source is prepared for
 the official distribution `kdpika-licensing`, import `kdpika_licensing`.
-Owner approval of usage/redistribution terms is still required before registry
-publication. Source repository: [kdpika/kdpika-licensing](https://github.com/kdpika/kdpika-licensing)
-(private; access is controlled by the owner). No registry release or successful
+The SDK is MIT-licensed; registry publication still requires final approval
+and completed release checks. Source repository: [kdpika/kdpika-licensing](https://github.com/kdpika/kdpika-licensing)
+(SDK source only; platform/backend source is not included). No registry release or successful
 CI run is implied by the presence of these files.
 
 [Platform API documentation](https://licensing.kdpika.com/docs) ·
@@ -404,8 +404,11 @@ No local SDK can provide that guarantee. Enforce valuable server-side operations
 on your authenticated backend too. Do not market the SDK as tamper-proof.
 
 ### 34. Is the SDK open source or freely redistributable?
-No such grant is invented here. The existing proprietary information notice is
-retained; the owner must approve explicit SDK usage/redistribution terms.
+Yes. This SDK and its included documentation use the MIT License. You may
+integrate and redistribute it in commercial applications under that license,
+including its copyright and permission notice. The separately hosted KDPika
+platform, server code and service subscription are not included or licensed
+by this SDK repository. Using the service still requires its applicable access.
 
 ### 35. Where do I report a security problem?
 Privately email hi@kdpika.com without secrets. Do not post a live exploit or
@@ -422,9 +425,9 @@ Contribute with synthetic Sandbox data only. Install `.[dev,docs,test]`, run
 Ruff, strict mypy, pytest/coverage, tox and `mkdocs build --strict` before
 proposing a change. Keep API v1/state/signing compatibility and add a regression
 test. Included CONTRIBUTING.md and CODE_OF_CONDUCT.md explain the process.
-The [repository and issue tracker](https://github.com/kdpika/kdpika-licensing/issues)
-are private; contributors need owner-granted access. Contact hi@kdpika.com if
-you cannot access them. Do not put security reports in public issues.
+Use the [repository and issue tracker](https://github.com/kdpika/kdpika-licensing/issues)
+for non-sensitive SDK bugs and contributions. Security reports belong privately
+at hi@kdpika.com, never in public issues.
 
 ## Security and license
 
@@ -434,8 +437,11 @@ customer payloads. See included SECURITY.md. No response-time SLA is promised.
 
 ## License
 
-The existing proprietary LICENSE information notice is retained, not replaced
-by an invented open-source grant. **TODO(owner decision): approve explicit SDK
-usage/redistribution terms before public distribution.** Contact hi@kdpika.com.
-A public registry release, repository or general redistribution permission is
-not asserted by the presence of this source candidate.
+This SDK and its included documentation are licensed under the [MIT License](LICENSE).
+Copyright (c) 2026 KHALED AL HARAZI. Keep the copyright and permission notice
+when redistributing the SDK. It is provided without warranty as stated in LICENSE.
+
+The separately hosted KDPika SaaS platform, backend source, customer data and
+service access are not part of this SDK distribution. MIT licensing of the SDK
+does not grant free platform access or rights to KDPika trademarks. Publishing
+to PyPI will make the SDK source downloadable; it does not publish the backend.

@@ -1,24 +1,27 @@
 # Owner release procedure
 
-**No registry release has been published.** The owner authorized the initial
-private source upload to https://github.com/kdpika/kdpika-licensing. These
+**No registry release has been published.** The owner selected a public SDK-only
+repository at https://github.com/kdpika/kdpika-licensing. These
 instructions do not authorize PyPI/TestPyPI publication, release tags, changing
 repository visibility or hosted downloads. Complete all gates before release.
 
 ## 1. Resolve owner decisions
 
-- Approve final package/import/version and support contact.
-- Replace the proprietary information-only LICENSE with owner-approved actual
-  usage/redistribution terms; do not select an open-source grant without approval.
-- Set release-config.json approvals true only after those decisions. Set
-  approved_license_sha256 to the actual approved file hash:
+- The owner selected MIT for this Python SDK and its included documentation,
+  with copyright (c) 2026 KHALED AL HARAZI. It does not license the separately
+  hosted SaaS platform/backend or grant free service access.
+- Package/import/support identity and MIT terms are prepared in release-config.json.
+  version_approved deliberately remains false until final release authorization
+  and completed external checks. Do not create a tag to bypass this gate.
+- The approved_license_sha256 records the actual MIT LICENSE bytes. If those
+  bytes change, review the change and update the approved hash using:
   `python -c "import hashlib,pathlib;print(hashlib.sha256(pathlib.Path('LICENSE').read_bytes()).hexdigest())"`.
   The gate explicitly refuses the old information-only notice.
-- The confirmed repository is **kdpika/kdpika-licensing**, currently private.
+- The confirmed public SDK-only repository is **kdpika/kdpika-licensing**.
   release-config.json and source/issues metadata use this actual identity;
-  CODEOWNERS names @kdpika. Do not change visibility without owner permission.
-- Confirm support_email and the remaining release approvals; no registry/CI
-  success badge is added until the corresponding release/check actually exists.
+  CODEOWNERS names @kdpika. Platform/backend source is not included.
+- No registry/CI success badge is added until the corresponding release/check
+  actually exists. License approval does not authorize a registry upload.
 - Recheck PyPI name availability immediately before publication. The name's
   JSON endpoint returned 404 on 2026-10-20, which is not a reservation.
 
@@ -40,9 +43,22 @@ and .github/ are siblings. No workflow working-directory rewrite is needed.
 
 ## 3. One-time GitHub and Trusted Publisher setup
 
+First-time owner: PyPI is the package catalogue; pip is the command developers
+use to install packages from it. You only need a PyPI account, verified email,
+two-factor authentication and one Trusted Publisher form. Never send your
+password, authenticator codes, recovery codes or API tokens in chat. The
+maintainer can handle the GitHub/code side once this account setup is complete.
+
+GitHub rejected required-reviewer protection while the repository was private
+under its current plan. The owner selected a public SDK-only repository to
+enable protected publishing without a paid upgrade. Backend source is not involved.
+See [GitHub environment availability](https://docs.github.com/en/actions/how-tos/deploy/configure-and-manage-deployments/manage-environments).
+
 For both GitHub environments **testpypi** and **pypi**:
-require human reviewers, prevent self-approval if available, and restrict
-deployment to reviewed release tags. Protect main and release tags/rulesets.
+require the owner @kdpika as a human reviewer and restrict deployment to release
+tags. Self-review prevention remains off because this is a sole-owner project;
+the owner must still explicitly approve each publishing job in GitHub. With a
+second trusted maintainer, consider preventing self-review too.
 If your GitHub plan cannot enforce reviewers, stop and arrange an equivalent
 owner-controlled release approval process before enabling publishing.
 

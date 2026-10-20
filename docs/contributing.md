@@ -1,8 +1,9 @@
 # Contributing
 
-Use the [SDK repository](https://github.com/kdpika/kdpika-licensing) if you have
-access; it is private. Otherwise contact hi@kdpika.com. Follow the included
-CODE_OF_CONDUCT.md; send security reports privately, not in public issues.
+Use the public [SDK repository](https://github.com/kdpika/kdpika-licensing)
+for non-sensitive SDK contributions. It does not contain the platform/backend.
+Follow CODE_OF_CONDUCT.md; send security reports privately to hi@kdpika.com,
+not in public issues.
 
 Install .[dev,docs,test] in a private virtualenv. Run Ruff lint/format, strict
 mypy, pytest with coverage, tox and mkdocs build --strict. Use only synthetic

@@ -33,6 +33,9 @@ versions are independent. The candidate below has not been published.
 
 ### Changed
 
+- Owner-selected MIT License for this Python SDK and its documentation; no
+  grant to the separately hosted platform/backend or service access.
+
 - Candidate distribution `kdpika-licensing`; `license_sdk` remains a deprecated
   compatibility shim. Storage namespace, filenames and keyring service unchanged.
 - Candidate Python support 3.11–3.14; local loopback HTTP needs explicit opt-in.
@@ -43,8 +46,8 @@ versions are independent. The candidate below has not been published.
 
 ### Not released
 
-Owner approval, final SDK usage/redistribution license and repository identity
-are pending. Documentation/examples/publishing automation are prepared and locally
+Final release approval and account-side publishing setup are pending. The SDK
+MIT License and repository identity are prepared. Documentation/examples/publishing automation are prepared and locally
 verified as described in the final report; remote CI/OIDC publication is not run.
 No PyPI/TestPyPI upload, public tag, remote push or hosting deployment occurred.
 

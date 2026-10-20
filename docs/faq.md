@@ -135,8 +135,10 @@ No local SDK can provide that guarantee. Enforce valuable server-side operations
 on your authenticated backend too. Do not market the SDK as tamper-proof.
 
 ### 34. Is the SDK open source or freely redistributable?
-No such grant is invented here. The existing proprietary information notice is
-retained; the owner must approve explicit SDK usage/redistribution terms.
+Yes. The SDK and included documentation use the MIT License. Integration and
+redistribution in commercial apps are permitted under that license, including
+its copyright and permission notice. The separate SaaS platform/backend and
+service access are not part of this distribution.
 
 ### 35. Where do I report a security problem?
 Privately email hi@kdpika.com without secrets. Do not post a live exploit or

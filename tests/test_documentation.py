@@ -59,7 +59,8 @@ def test_readme_faq_and_constructor_parameters_are_present():
     for name in inspect.signature(LicenseClient).parameters:
         assert name in readme
     assert "signature_valid" in readme
-    assert "TODO(owner decision)" in readme
+    assert "MIT License" in readme
+    assert "Copyright (c) 2026 KHALED AL HARAZI" in readme
     from kdpika_licensing.client import _MESSAGES
 
     assert all(code in readme for code in _MESSAGES)
