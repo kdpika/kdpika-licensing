@@ -1,6 +1,12 @@
 # Changelog
 
-## 1.1.0 — 2026-10-20
+## 1.1.1 — 2026-10-20
+
+- Preserve approved LICENSE bytes across operating systems using Git LF rules.
+- Supersedes the unpublished 1.1.0 attempt without rewriting its tag or changing
+  the SDK runtime. See PyPI for registry availability.
+
+## 1.1.0 — unpublished release preparation, 2026-10-20
 
 ### Fixed
 - PHP signed JSON numbers/Unicode and cache verification.

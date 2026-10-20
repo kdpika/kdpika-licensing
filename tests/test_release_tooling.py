@@ -10,6 +10,12 @@ import pytest
 ROOT = Path(__file__).parents[1]
 
 
+def test_release_text_attributes_preserve_license_bytes():
+    attributes = (ROOT / ".gitattributes").read_text(encoding="utf-8")
+    assert "* text=auto eol=lf" in attributes.splitlines()
+    assert "include .gitattributes" in (ROOT / "MANIFEST.in").read_text(encoding="utf-8")
+
+
 @pytest.fixture
 def gate(monkeypatch, tmp_path):
     monkeypatch.syspath_prepend(str(ROOT / "tools"))

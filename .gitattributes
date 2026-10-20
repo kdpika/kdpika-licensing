@@ -1,0 +1,2 @@
+# Keep approved text bytes identical across Windows, macOS and Linux checkouts.
+* text=auto eol=lf

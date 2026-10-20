@@ -1,7 +1,7 @@
 # Getting started
 
 Use Python 3.11–3.14 and a private virtualenv. Install the published release
-with `python -m pip install "kdpika-licensing==1.1.0"`. Check the
+with `python -m pip install "kdpika-licensing==1.1.1"`. Check the
 [PyPI release history](https://pypi.org/project/kdpika-licensing/#history)
 for availability. For an unpublished source checkout, use
 `python -m pip install .` instead.

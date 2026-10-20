@@ -4,7 +4,16 @@ Notable changes follow Keep a Changelog categories. API v1 and SDK package
 versions are independent. Registry availability is recorded on PyPI; a source
 changelog entry is not proof of publication.
 
-## [1.1.0] — 2026-10-20
+## [1.1.1] — 2026-10-20
+
+### Fixed
+
+- Pin Git text checkouts to LF so the approved MIT license retains the same
+  SHA-256 on Windows, macOS and Linux. No license bytes or SDK logic changed.
+- Supersedes the blocked, unpublished `v1.1.0` release attempt; that tag is
+  preserved rather than rewritten. This source entry is not upload evidence.
+
+## [1.1.0] — unpublished release preparation, 2026-10-20
 
 ### Fixed
 
