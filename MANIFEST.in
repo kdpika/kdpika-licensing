@@ -1,0 +1,11 @@
+include LICENSE README.md CHANGELOG.md pyproject.toml setup.py tox.ini .pre-commit-config.yaml
+include SECURITY.md CONTRIBUTING.md CODE_OF_CONDUCT.md mkdocs.yml release-config.json
+recursive-include docs *.md
+prune docs/internal
+recursive-include examples *.py *.md
+recursive-include tools *.py
+recursive-include .github *.yml *.md
+recursive-include src *.py py.typed
+recursive-include tests *.py *.json
+global-exclude .DS_Store *.pyc
+prune tests/__pycache__

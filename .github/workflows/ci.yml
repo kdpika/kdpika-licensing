@@ -1,0 +1,67 @@
+name: Python SDK checks
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+  workflow_call:
+permissions:
+  contents: read
+jobs:
+  tests:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python: ["3.11", "3.12", "3.13", "3.14"]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install --upgrade "pip>=26.2.1,<27"
+      - run: python -m pip install ".[test]"
+      - run: python -m pytest --cov --cov-report=xml --cov-report=term-missing
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: coverage-${{ matrix.os }}-${{ matrix.python }}
+          path: coverage.xml
+          if-no-files-found: error
+  quality:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.13"
+      - run: python -m pip install --upgrade "pip>=26.2.1,<27"
+      - run: python -m pip install ".[dev,docs,test]"
+      - run: ruff check src tests tools examples
+      - run: ruff format --check src tests tools examples
+      - run: mypy --strict src
+      - run: mkdocs build --strict
+      - run: python -m build
+      - run: python -m twine check dist/*
+      - run: python tools/verify_artifacts.py
+      - run: python tools/audit_dependencies.py
+      - run: python tools/audit_dependencies.py --tooling
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: python-distributions
+          path: dist/*
+          if-no-files-found: error
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: candidate-docs-and-evidence
+          path: |
+            site/
+            docs/internal/artifact-verification-release.json
+            docs/internal/dependency-audit-release.json
+            docs/internal/dependency-audit-tooling-release.json
+          if-no-files-found: error

@@ -1,0 +1,10 @@
+{
+  "package": "kdpika-licensing",
+  "name_approved": false,
+  "version_approved": false,
+  "license_approved": false,
+  "approved_license_sha256": "TODO(owner decision)",
+  "repository": "kdpika/kdpika-licensing",
+  "support_email": "hi@kdpika.com",
+  "support_email_approved": false
+}

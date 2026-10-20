@@ -1,0 +1,53 @@
+site_name: KDPika Licensing Python SDK
+site_description: Typed API v1 software licensing client — unpublished release candidate
+docs_dir: docs
+site_dir: site
+exclude_docs: |
+  internal/
+  migration-phase1.md
+theme:
+  name: material
+  font: false
+  features:
+    - navigation.sections
+    - content.code.copy
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+          options:
+            docstring_style: google
+            show_source: false
+            show_signature_annotations: true
+            inherited_members: true
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+nav:
+  - Home: index.md
+  - Getting started: getting-started.md
+  - Concepts: concepts.md
+  - Guides:
+      - Desktop and Qt: guides/desktop.md
+      - Command line: guides/cli.md
+      - Backend services: guides/backend.md
+      - Async and concurrency: guides/async.md
+  - Reference:
+      - API: api.md
+      - Configuration: configuration.md
+      - Errors: errors.md
+  - Security: security.md
+  - Offline and clock: offline.md
+  - Storage: storage.md
+  - Migration: migration.md
+  - Upgrading: upgrading.md
+  - FAQ: faq.md
+  - Changelog: changelog.md
+  - Contributing: contributing.md
+  - License: license.md
+  - Release process: release.md
