@@ -1,6 +1,12 @@
 # Changelog
 
-## 1.1.1 — 2026-10-20
+## 1.1.2 — 2026-10-20
+
+- Pin native macOS CI to `macos-15` arm64 following hosted runner allocation
+  failures. Core SDK behavior, required tests and publishing protections stay
+  unchanged. Earlier unpublished tags are preserved.
+
+## 1.1.1 — unpublished release preparation, 2026-10-20
 
 - Preserve approved LICENSE bytes across operating systems using Git LF rules.
 - Supersedes the unpublished 1.1.0 attempt without rewriting its tag or changing

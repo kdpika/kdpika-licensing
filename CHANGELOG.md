@@ -4,7 +4,16 @@ Notable changes follow Keep a Changelog categories. API v1 and SDK package
 versions are independent. Registry availability is recorded on PyPI; a source
 changelog entry is not proof of publication.
 
-## [1.1.1] — 2026-10-20
+## [1.1.2] — 2026-10-20
+
+### Changed
+
+- Pin native macOS CI to the supported `macos-15` arm64 image after repeated
+  `macos-latest` runner-acquisition failures. All Python 3.11–3.14 checks and
+  protected OIDC publication gates remain required; SDK runtime is unchanged.
+- Preserve previous unpublished tags instead of rewriting release history.
+
+## [1.1.1] — unpublished release preparation, 2026-10-20
 
 ### Fixed
 
