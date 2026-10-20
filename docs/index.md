@@ -1,7 +1,7 @@
 # KDPika Licensing Python SDK
 
 A typed API-v1 client for activating one persistent software installation,
-checking signed access and releasing its seat. **SDK version 1.1.2.**
+checking signed access and releasing its seat. **SDK version 1.1.3.**
 Published versions are recorded in the
 [PyPI release history](https://pypi.org/project/kdpika-licensing/#history).
 

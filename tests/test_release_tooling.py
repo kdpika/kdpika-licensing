@@ -137,6 +137,6 @@ def test_workflow_action_pins_and_publish_isolation():
 
 def test_native_matrix_keeps_all_python_versions_and_explicit_macos():
     ci = (ROOT / ".github/workflows/ci.yml").read_text(encoding="utf-8")
-    assert 'os: [ubuntu-latest, macos-15, windows-latest]' in ci
+    assert "os: [ubuntu-latest, macos-15, windows-latest]" in ci
     assert 'python: ["3.11", "3.12", "3.13", "3.14"]' in ci
-    assert 'python -m pytest --cov' in ci
+    assert "python -m pytest --cov" in ci

@@ -19,5 +19,5 @@ the candidate range. cryptography 50.0.2+ below 51 is required after audit;
 Intel macOS/32-bit Windows wheels are no longer supplied upstream.
 
 AsyncLicenseClient wraps an existing client; no new activation is created.
-Version 1.1.2 supersedes the unpublished 1.1.0rc1/1.1.0/1.1.1 preparation. The signed
+Version 1.1.3 supersedes the unpublished 1.1.0rc1/1.1.0/1.1.1 preparation. The signed
 protocol and persistent installation namespace remain unchanged.

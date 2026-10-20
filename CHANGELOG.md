@@ -4,7 +4,7 @@ Notable changes follow Keep a Changelog categories. API v1 and SDK package
 versions are independent. Registry availability is recorded on PyPI; a source
 changelog entry is not proof of publication.
 
-## [1.1.2] — 2026-10-20
+## [1.1.3] — 2026-10-20
 
 ### Changed
 

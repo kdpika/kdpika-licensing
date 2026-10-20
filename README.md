@@ -3,7 +3,7 @@
 Integrate software activation, signed license checks and feature limits into
 desktop apps, services and command-line tools using the existing KDPika API v1.
 
-**Version 1.1.2.** Distribution: `kdpika-licensing`; import: `kdpika_licensing`.
+**Version 1.1.3.** Distribution: `kdpika-licensing`; import: `kdpika_licensing`.
 The SDK is MIT-licensed. Source repository: [kdpika/kdpika-licensing](https://github.com/kdpika/kdpika-licensing)
 (SDK source only; platform/backend source is not included).
 Check [PyPI release history](https://pypi.org/project/kdpika-licensing/#history)
@@ -39,7 +39,7 @@ Python >=3.11,<3.15. Create a private virtualenv:
 python -m venv .venv
 # Activate the virtualenv using your shell, then:
 python -m pip install --upgrade "pip>=26.2.1,<27"
-python -m pip install "kdpika-licensing==1.1.2"
+python -m pip install "kdpika-licensing==1.1.3"
 ~~~
 
 Windows PowerShell activation: `.venv/Scripts/Activate.ps1`.
@@ -417,7 +417,7 @@ customer credentials in a public issue. No guaranteed response SLA is claimed.
 
 ## Changelog and contributing
 
-1.1.2 upgrades the old local 1.0.0 label:
+1.1.3 upgrades the old local 1.0.0 label:
 signed JSON/cache fixes, fail-closed helpers, time/pin/storage/network hardening,
 new import namespace, async adapter, typing and release tooling. See the
 included CHANGELOG.md for the detailed record and migration notes.
