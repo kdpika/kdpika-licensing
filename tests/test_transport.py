@@ -38,7 +38,9 @@ def test_valid_transport_headers_timeout_and_no_redirect(monkeypatch):
 
 
 @pytest.mark.parametrize(
-    "raw", [b"[]", b"not json", b'{"success":true,"success":false}', b"x" * 1048577, b'"\xff"']
+    "raw",
+    [b"[]", b"not json", b'{"success":true,"success":false}', b"x" * 1048577, b'"\xff"'],
+    ids=["array", "malformed", "duplicate", "size", "utf8"],
 )
 def test_invalid_body_is_authoritative_not_a_network_failure(monkeypatch, raw):
     transport = HttpTransport("https://example.invalid")

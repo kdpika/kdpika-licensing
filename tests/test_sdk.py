@@ -167,7 +167,8 @@ class LicenseClientTests(unittest.TestCase):
         self.assertEqual(self.client.installation_id, second.installation_id)
         self.assertEqual("permission-protected-file", self.client.storage_security)
         token_path = self.client.local.token_path
-        self.assertEqual(0o600, os.stat(token_path).st_mode & 0o777)
+        if os.name != "nt":
+            self.assertEqual(0o600, os.stat(token_path).st_mode & 0o777)
 
     def test_cache_avoids_unnecessary_online_validation(self):
         self.activate()

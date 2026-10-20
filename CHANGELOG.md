@@ -7,6 +7,9 @@ versions are independent. The candidate below has not been published.
 
 ### Fixed
 
+- Make the test harness portable to Windows: bounded parametrized case names,
+  POSIX-only permission assertions and asyncio's private socketpair wake-up path.
+  Ordinary test network connections remain blocked. SDK runtime is unchanged.
 - Preserve signed JSON wire number tokens through HTTP/cache round trips and
   escape U+2028/U+2029; strict duplicate/UTF-8/base64url/depth/size checks.
 - Gate feature helpers on a verified valid current result, including expiry,

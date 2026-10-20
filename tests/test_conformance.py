@@ -77,6 +77,7 @@ def test_lossless_canonical_roundtrip_property(value):
         b"[" * 66 + b"0" + b"]" * 66,
         b" " * 1048577,
     ],
+    ids=["duplicate", "nan", "infinity", "trailing", "surrogate", "utf8", "overflow", "depth", "size"],
 )
 def test_reject_ambiguous_or_unbounded_json(raw):
     with pytest.raises((ValueError, UnicodeError, RecursionError)):
