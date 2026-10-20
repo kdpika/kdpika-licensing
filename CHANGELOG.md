@@ -4,7 +4,16 @@ Notable changes follow Keep a Changelog categories. API v1 and SDK package
 versions are independent. Registry availability is recorded on PyPI; a source
 changelog entry is not proof of publication.
 
-## [1.1.3] — 2026-10-20
+## [1.1.4] — 2026-10-20
+
+### Fixed
+
+- Audit exact installed third-party distributions (including transitive dependencies)
+  without looking up the unpublished SDK candidate on PyPI. Record that scope in
+  audit evidence; vulnerabilities, collection failures and service errors still block
+  publication. SDK runtime and all protected publication gates are unchanged.
+
+## [1.1.3] — unpublished release preparation, 2026-10-20
 
 ### Changed
 

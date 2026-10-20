@@ -1,6 +1,12 @@
 # Changelog
 
-## 1.1.3 — 2026-10-20
+## 1.1.4 — 2026-10-20
+
+Audit the exact installed third-party dependency inventory without querying the
+unpublished SDK itself. Audit scope is recorded; all audit failures still block
+publication. No SDK runtime changes.
+
+## 1.1.3 — unpublished release preparation, 2026-10-20
 
 - Pin native macOS CI to `macos-15` arm64 following hosted runner allocation
   failures. Core SDK behavior, required tests and publishing protections stay
