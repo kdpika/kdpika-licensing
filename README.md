@@ -3,12 +3,12 @@
 Integrate software activation, signed license checks and feature limits into
 desktop apps, services and command-line tools using the existing KDPika API v1.
 
-**Release candidate 1.1.0rc1 — not yet published.** This source is prepared for
-the official distribution `kdpika-licensing`, import `kdpika_licensing`.
-The SDK is MIT-licensed; registry publication still requires final approval
-and completed release checks. Source repository: [kdpika/kdpika-licensing](https://github.com/kdpika/kdpika-licensing)
-(SDK source only; platform/backend source is not included). No registry release or successful
-CI run is implied by the presence of these files.
+**Version 1.1.0.** Distribution: `kdpika-licensing`; import: `kdpika_licensing`.
+The SDK is MIT-licensed. Source repository: [kdpika/kdpika-licensing](https://github.com/kdpika/kdpika-licensing)
+(SDK source only; platform/backend source is not included).
+Check [PyPI release history](https://pypi.org/project/kdpika-licensing/#history)
+for published versions and [GitHub Actions](https://github.com/kdpika/kdpika-licensing/actions)
+for actual platform verification results. Source version alone is not proof of publication.
 
 [Platform API documentation](https://licensing.kdpika.com/docs) ·
 [Configuration](#configuration-reference) · [Errors](#error-codes-and-recovery) ·
@@ -33,29 +33,28 @@ management API key in a distributed client.
 
 ## Installation
 
-Python >=3.11,<3.15. From this unpublished source checkout:
+Python >=3.11,<3.15. Create a private virtualenv:
 
 ~~~bash
 python -m venv .venv
 # Activate the virtualenv using your shell, then:
 python -m pip install --upgrade "pip>=26.2.1,<27"
-python -m pip install .
+python -m pip install "kdpika-licensing==1.1.0"
 ~~~
 
 Windows PowerShell activation: `.venv/Scripts/Activate.ps1`.
 macOS/Linux activation: `source .venv/bin/activate`.
 
-After the owner-approved registry publication (these commands are NOT evidence
-that a release exists yet):
+Optional extras and upgrades (published versions only):
 
 ~~~bash
 python -m pip install kdpika-licensing
-python -m pip install "kdpika-licensing==1.1.0rc1"
 python -m pip install "kdpika-licensing[keyring]"
 python -m pip install "kdpika-licensing[qt]"
 python -m pip install --upgrade kdpika-licensing
 ~~~
 
+For an unpublished checkout, use `python -m pip install .` instead.
 A pre-release must be requested explicitly by version or `--pre`. Extras:
 keyring, qt, test, dev, docs; legacy secure-storage/ui remain aliases.
 Base runtime has only cryptography as a direct dependency (50.0.2+ below 51).
@@ -264,20 +263,22 @@ does not release a server-side seat. Test upgrades on disposable Sandbox state.
 | Capability | Verified / boundary |
 |---|---|
 | Python 3.11–3.14 | Executed on arm64 macOS in Phase 1; final results recorded in release report |
-| Linux and Windows | CI matrix prepared; not locally executed or claimed passed |
+| Linux and Windows | See the exact release workflow for native CI matrix results |
 | Base wheel/sdist | Fresh isolated installs with signed mock lifecycle |
 | Native Qt/keyring/PyInstaller | Target-platform acceptance still required |
 | PHP signature contract | Shared vectors, Unicode, number/cache round trips; not RFC 8785/JCS |
 
 ## Frequently asked questions
 
-### 1. Is this candidate already on PyPI?
-No. Version 1.1.0rc1 is prepared locally. Registry commands below are instructions
-for the owner-approved release, not evidence that an upload occurred.
+### 1. Where can I check published versions?
+Use the [PyPI release history](https://pypi.org/project/kdpika-licensing/#history).
+Only versions listed there are registry releases; a Git tag or checkout alone
+does not establish a successful upload.
 
 ### 2. Which Python versions are supported?
-The candidate requires Python 3.11–3.14. Those four interpreters were executed
-on arm64 macOS; other operating systems require the configured CI to pass.
+The SDK requires Python 3.11–3.14. The release workflow checks Linux, macOS and
+Windows; inspect its results for the exact version. Native Qt, OS keyring and
+packaged applications need additional testing on your target platform.
 
 ### 3. What is the difference between an App ID and a license key?
 The public App ID identifies software. A customer's key activates its purchase.
@@ -416,7 +417,7 @@ customer credentials in a public issue. No guaranteed response SLA is claimed.
 
 ## Changelog and contributing
 
-1.1.0rc1 is an unpublished upgrade candidate from the old local 1.0.0 label:
+1.1.0 upgrades the old local 1.0.0 label:
 signed JSON/cache fixes, fail-closed helpers, time/pin/storage/network hardening,
 new import namespace, async adapter, typing and release tooling. See the
 included CHANGELOG.md for the detailed record and migration notes.

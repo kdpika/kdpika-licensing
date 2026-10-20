@@ -1,9 +1,10 @@
 # Owner release procedure
 
-**No registry release has been published.** The owner selected a public SDK-only
-repository at https://github.com/kdpika/kdpika-licensing. These
-instructions do not authorize PyPI/TestPyPI publication, release tags, changing
-repository visibility or hosted downloads. Complete all gates before release.
+The owner selected a public SDK-only repository at
+https://github.com/kdpika/kdpika-licensing and authorized the 1.1.0 publication
+on 2026-10-20. Complete all verification gates before uploading. Check PyPI
+for actual registry availability; this procedure is not evidence of an upload.
+Future releases still require an explicit reviewed version and approval.
 
 ## 1. Resolve owner decisions
 
@@ -11,8 +12,9 @@ repository visibility or hosted downloads. Complete all gates before release.
   with copyright (c) 2026 KHALED AL HARAZI. It does not license the separately
   hosted SaaS platform/backend or grant free service access.
 - Package/import/support identity and MIT terms are prepared in release-config.json.
-  version_approved deliberately remains false until final release authorization
-  and completed external checks. Do not create a tag to bypass this gate.
+  version_approved records the owner's publication authorization for 1.1.0.
+  It does not bypass required CI or protected environment review. Reset the
+  approval when preparing a different version until that release is authorized.
 - The approved_license_sha256 records the actual MIT LICENSE bytes. If those
   bytes change, review the change and update the approved hash using:
   `python -c "import hashlib,pathlib;print(hashlib.sha256(pathlib.Path('LICENSE').read_bytes()).hexdigest())"`.
@@ -115,15 +117,16 @@ package registry lookup is explicitly skipped. Optional Qt/native-keyring
 acceptance is separate and is not certified by either advisory lookup.
 
 An owner gate check (with your real repository, after legal/identity decisions):
-`python tools/release_gate.py --tag v1.1.0rc1 --repository kdpika/kdpika-licensing`.
-It must fail with the checked-in unresolved config. Tests use synthetic config
-to verify both pass/fail routing; they do not approve the real release.
+`python tools/release_gate.py --tag v1.1.0 --repository kdpika/kdpika-licensing`.
+It validates the approved 1.1.0 configuration. Tests use synthetic config to
+verify both pass/fail routing; they do not approve future releases.
 
 ## 5. Owner-only TestPyPI dry run
 
 The following commands create/push a tag and trigger publishing. **Do not run
 until explicit owner authorization. They were NOT run during preparation.**
-Start from a clean reviewed commit and source version 1.1.0rc1:
+For a separately authorized pre-release rehearsal, use a clean reviewed commit
+whose source version is exactly 1.1.0rc1 (not the stable 1.1.0 checkout):
 
 ~~~bash
 git tag -a v1.1.0rc1 -m "KDPika Python SDK 1.1.0rc1"
@@ -157,9 +160,10 @@ Check the downloaded artifact hash against reviewed build evidence.
 
 ## 6. Owner-only production release
 
-After TestPyPI and target-OS acceptance, deliberately change source version and
-changelog to the owner-approved stable version (for example 1.1.0), review it,
-update approval config, rerun all checks and commit. Do not relabel an existing
+For an authorized stable release, deliberately set the exact source version,
+changelog and approval configuration. Require successful native core CI and
+fresh verification of the final artifacts. TestPyPI is an optional separate
+rehearsal, not evidence of production publication. Do not relabel an existing
 immutable index file or reuse a published version.
 
 Only then, with explicit publication approval:
@@ -171,7 +175,8 @@ git push origin v1.1.0
 
 Stable tags route only to protected pypi. Review the exact artifacts and approve
 the production environment. The workflow does not create a GitHub public
-release or push further commits. No remote action has been executed here.
+release or push further commits. Consult the actual workflow and registry
+instead of inferring upload success from source files or tags.
 
 ## 7. Verify and coordinate public documentation
 
@@ -183,7 +188,7 @@ Only after publication, update the platform Python SDK page at
 https://licensing.kdpika.com/docs/v1/sdks/python: approved version, pip install
 instructions, new import, migration/compatibility notes and genuine registry/
 repository links. Update source ZIP/versioned archives deliberately, not by
-running an unrelated monorepository docs build against this unapproved candidate.
+running an unrelated monorepository docs build against an unreleased checkout.
 Keep API v1 documentation linked rather than duplicating its contract.
 
 If a release is defective, stop rollouts, publish a corrected new version and

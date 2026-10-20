@@ -2,13 +2,15 @@
 
 ## Frequently asked questions
 
-### 1. Is this candidate already on PyPI?
-No. Version 1.1.0rc1 is prepared locally. Registry commands below are instructions
-for the owner-approved release, not evidence that an upload occurred.
+### 1. Where can I check published versions?
+Use the [PyPI release history](https://pypi.org/project/kdpika-licensing/#history).
+Only versions listed there are registry releases; source version alone is not
+proof of a successful upload.
 
 ### 2. Which Python versions are supported?
-The candidate requires Python 3.11–3.14. Those four interpreters were executed
-on arm64 macOS; other operating systems require the configured CI to pass.
+The SDK requires Python 3.11–3.14. Inspect the exact release workflow for Linux,
+macOS and Windows results. Native Qt, OS keyring and packaged applications need
+additional testing on your target platform.
 
 ### 3. What is the difference between an App ID and a license key?
 The public App ID identifies software. A customer's key activates its purchase.

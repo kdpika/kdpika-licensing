@@ -1,9 +1,10 @@
 # Changelog
 
 Notable changes follow Keep a Changelog categories. API v1 and SDK package
-versions are independent. The candidate below has not been published.
+versions are independent. Registry availability is recorded on PyPI; a source
+changelog entry is not proof of publication.
 
-## [Unreleased] — 1.1.0rc1 candidate, 2026-10-20
+## [1.1.0] — 2026-10-20
 
 ### Fixed
 
@@ -47,12 +48,12 @@ versions are independent. The candidate below has not been published.
   no longer supplies Intel macOS or 32-bit Windows wheels. Native compatibility
   beyond the executed arm64 macOS matrix remains unverified.
 
-### Not released
+### Release verification
 
-Final release approval and account-side publishing setup are pending. The SDK
-MIT License and repository identity are prepared. Documentation/examples/publishing automation are prepared and locally
-verified as described in the final report; remote CI/OIDC publication is not run.
-No PyPI/TestPyPI upload, public tag, remote push or hosting deployment occurred.
+The owner approved publication and configured PyPI Trusted Publishing for
+`kdpika/kdpika-licensing`, `release.yml`, environment `pypi`. Uploads remain
+conditional on successful release checks and the protected environment review.
+Native Qt, OS keyring and packaged-app acceptance are separate from core CI.
 
 ## 1.0.0 — observed current source, 2026-10-17
 

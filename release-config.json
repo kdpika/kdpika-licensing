@@ -1,7 +1,7 @@
 {
   "package": "kdpika-licensing",
   "name_approved": true,
-  "version_approved": false,
+  "version_approved": true,
   "license_approved": true,
   "approved_license_sha256": "5ed079db8b7439bf3babdd7b1dc6e87e835699554fd0462709e3baa80226b6f9",
   "repository": "kdpika/kdpika-licensing",

@@ -1,9 +1,10 @@
 # Getting started
 
-Use Python 3.11–3.14 and a private virtualenv. Until registry publication,
-install this checkout with `python -m pip install .`. After an approved release,
-use `python -m pip install "kdpika-licensing==1.1.0rc1"`; this is not a claim
-that the registry currently contains the candidate.
+Use Python 3.11–3.14 and a private virtualenv. Install the published release
+with `python -m pip install "kdpika-licensing==1.1.0"`. Check the
+[PyPI release history](https://pypi.org/project/kdpika-licensing/#history)
+for availability. For an unpublished source checkout, use
+`python -m pip install .` instead.
 
 Create a product and disposable Sandbox license in the platform. Configure
 KDP_APP_ID, KDP_STATE_DIR, KDP_LICENSE_KEY and optional KDP_CUSTOMER_EMAIL
